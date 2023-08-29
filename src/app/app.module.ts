@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { PathLocationStrategy, LocationStrategy } from '@angular/common';
 
 // Modulos
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +24,7 @@ import { NopagefoundComponent } from './nopagefound/nopagefound.component';
     PagesModule,
     AuthModule
   ],
+  providers: [{provide: LocationStrategy, useClass: PathLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
